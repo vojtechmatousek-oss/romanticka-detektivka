@@ -134,6 +134,10 @@ body{background:var(--outer);overflow:hidden;font-family:"Libre Franklin",Arial,
 .dr .dd{font-size:31px;line-height:1.5}
 .dr .meta{font-size:21px;color:#5e5751}
 .btn.dark{background:#1d1b1a;color:#f4efe6;border-color:#1d1b1a;align-self:flex-start}
+
+/* Odkaz zpět na rozcestník her (přidáno) */
+.hub{position:absolute;left:150px;top:44px;font:600 24px "Libre Franklin",Arial,sans-serif;color:#e6d9c6;text-decoration:none;padding:8px 18px;border:2px solid rgba(241,233,220,.35)}
+.hub:hover{background:rgba(241,233,220,.14);color:#fff}
 </style>
 </head>
 <body><div id="vp"><div id="stage"></div></div><div id="ovp"><div id="ov" hidden></div></div>
@@ -324,7 +328,7 @@ function render(){
  const f=stage.querySelector('[data-focus]');if(f)f.focus({preventScroll:true});
 }
 function menu(){const has=S.teams.length;
- return `<div class="wall full"><div class="menu"><h1>Romantická detektivka</h1><p class="lead">Poznáte romantismus podle obsahu a formy? Body počítá hra.</p>
+ return `<div class="wall full"><a class="hub" href="https://vojtechmatousek-oss.github.io/">← Výběr her</a><div class="menu"><h1>Romantická detektivka</h1><p class="lead">Poznáte romantismus podle obsahu a formy? Body počítá hra.</p>
  <div class="rounds">${[[1,'Obsah, nebo forma?','Rozcvička. Týká se tvrzení tématu obrazu, nebo toho, jak je namalovaný?'],[2,'Proč je to romantismus?','Hlavní kolo. Za každý správný důvod bod, za poznaný obraz bonus.'],[3,'Pravda, nebo výmysl?','Bonusové kolo. Zajímavosti o obrazech, některé jsou zfalšované.']].map(([n,t,d])=>`<button class="rnd" data-round="${n}" ${has?'':'disabled'}><span class="rn">${n}. kolo</span><span class="rt">${t}</span><span class="rd">${d}</span></button>`).join('')}</div>
  <p class="tip">Tip: kliknutím na obraz ho zvětšíte. Po odhalení odpovědi jde kliknout na každé tvrzení i na čísla v obraze – otevře se podrobné vysvětlení se zdrojem.</p>
  <div class="mrow"><button class="btn gold" data-go="setup" data-focus>${has?'Změnit týmy':'Nastavit týmy'}</button>${has?`<button class="btn" data-go="end">Výsledky</button><button class="btn ghost" data-reset>Nová hra</button>`:''}</div>
