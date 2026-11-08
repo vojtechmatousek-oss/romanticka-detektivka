@@ -328,7 +328,7 @@ function render(){
  const f=stage.querySelector('[data-focus]');if(f)f.focus({preventScroll:true});
 }
 function menu(){const has=S.teams.length;
- return `<div class="wall full"><a class="hub" href="https://vojtechmatousek-oss.github.io/">← Výběr her</a><div class="menu"><h1>Romantická detektivka</h1><p class="lead">Poznáte romantismus podle obsahu a formy? Body počítá hra.</p>
+ return `<div class="wall full"><a class="hub" href="https://vojtechmatousek-oss.github.io/hry-dejiny-umeni/">← Výběr her</a><div class="menu"><h1>Romantická detektivka</h1><p class="lead">Poznáte romantismus podle obsahu a formy? Body počítá hra.</p>
  <div class="rounds">${[[1,'Obsah, nebo forma?','Rozcvička. Týká se tvrzení tématu obrazu, nebo toho, jak je namalovaný?'],[2,'Proč je to romantismus?','Hlavní kolo. Za každý správný důvod bod, za poznaný obraz bonus.'],[3,'Pravda, nebo výmysl?','Bonusové kolo. Zajímavosti o obrazech, některé jsou zfalšované.']].map(([n,t,d])=>`<button class="rnd" data-round="${n}" ${has?'':'disabled'}><span class="rn">${n}. kolo</span><span class="rt">${t}</span><span class="rd">${d}</span></button>`).join('')}</div>
  <p class="tip">Tip: kliknutím na obraz ho zvětšíte. Po odhalení odpovědi jde kliknout na každé tvrzení i na čísla v obraze – otevře se podrobné vysvětlení se zdrojem.</p>
  <div class="mrow"><button class="btn gold" data-go="setup" data-focus>${has?'Změnit týmy':'Nastavit týmy'}</button>${has?`<button class="btn" data-go="end">Výsledky</button><button class="btn ghost" data-reset>Nová hra</button>`:''}</div>
